@@ -19,6 +19,11 @@ http://statewidedatabase.org/index.html
 
 This database stores SoV and SoR records at a much finer resolution: the precinct level. Most files are .dbf, which are intented for access via mapping software. Geopandas does a good job loading them up. As it turns out, registration precincts are not the same as voting precincts, and the SWDB folks have performed a massive consolidation of the data into common geographical units (they call them SR precincts). There are roughly 22,000 such precincts in CA. Using crosswalk files also provided by SWDB, I aggregated the data to the census tract level (5,000 or so in CA). This allows for comparison of voting history with demographic variables obtained via the census API (using this [handy python wrapper](https://pypi.org/project/census/)).
 
+An example from this analysis:
+![swdb example](./plots/swdb_example.png)
 
+In most cases, variance of tract voting results is driven by party affiliation stats. However, census demographics can often improve the model, and occasionally do better than rep/dem divide.
+
+This analysis is very much a work in progress. But I am excited about making some fun interactive maps with Leaflet: 
 
 https://cdn.rawgit.com/cnehrkorn/CaliVoting/master/prop56_map.html
